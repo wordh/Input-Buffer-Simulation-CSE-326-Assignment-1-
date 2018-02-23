@@ -28,6 +28,7 @@ public class Assignment {
 			buffer[buffersize]='!';
 			read=i-2;
 		}
+		System.out.println("first half loading working ");
 		
 		while(lexemBegin <line.length())
 		{
@@ -40,6 +41,7 @@ public class Assignment {
 					read=i-2;
 				}
 				forward++;
+				System.out.println("2nd Half is Loading");
 				
 			}
 			else if(forward==buffersize*2)
@@ -61,8 +63,10 @@ public class Assignment {
 				}
 				lexemBegin=forward+1;
 				forward++;
+				System.out.println("");
 			}
 			forward++;
+			System.out.println("loop is running");
 			
 		}
 		
