@@ -1,3 +1,16 @@
+// Coded by Wordh Ul Hasan
+// ID: 133 0471 642
+
+
+// Github Repository for the codes: https://github.com/wordh/Input-Buffer-Simulation-CSE-326-Assignment-1-
+
+// The code can load first half of the buffer and find tokens perfectly
+// I have coded for second half but it is throwing ArrayIndexOutOfBoundExceptions.
+// Due to short time i couldn't complete but i can assume the problem is due to
+// 1. I have not handled for the situations if lexemBegin is in second half and Forward is found in first half
+// With more time the problem can be solved. 
+
+
 package Try1;
 
 import java.util.Scanner;
@@ -34,7 +47,7 @@ public class Assignment {
 		{
 			if(forward==buffersize)
 			{
-				for(int i=read;i<buffersize*2;i++)
+				for(int i=read;i<buffersize*2 && read<line.length();i++)
 				{
 					buffer[i]=line.charAt(i);
 					buffer[buffersize*2]='!';
@@ -46,7 +59,7 @@ public class Assignment {
 			}
 			else if(forward==buffersize*2)
 			{
-				for(int i=0;i<buffersize;i++)
+				for(int i=0;i<buffersize && read<line.length();i++)
 				{
 					buffer[i]=line.charAt(read+1);
 					buffer[buffersize]='!';
